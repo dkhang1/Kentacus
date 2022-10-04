@@ -1,0 +1,267 @@
+.home {
+  //section carousel
+  padding: 90px 0;
+  .carousel {
+    padding: 50px 0;
+    &-content {
+      max-width: 1170px;
+      margin: 0 auto;
+      .title {
+        line-height: 1.1;
+        @include OswaldText(65px, 700, #000);
+      }
+      .slidedesc {
+        padding: 25px 0 25px;
+        color: #000;
+        font-size: 20px;
+      }
+      .slidebtn {
+        a {
+          font-size: 20px;
+          @include btn;
+        }
+      }
+    }
+  }
+  // section best seller
+  .best-seller {
+    padding: 70px 0 30px 0;
+    background-color: $light-primary-color;
+  }
+  // deal of day
+  .dealofday {
+    padding: 0 0 50px 0;
+    background-color: $light-primary-color;
+    .text {
+      color: #000;
+      font-size: 17px;
+    }
+    .count-down {
+      padding: 20px 0 70px;
+      li {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 15px 20px;
+        font-weight: 500;
+        font-size: 23px;
+        position: relative;
+        line-height: 70px;
+        border-radius: 100%;
+        background-color: #fff;
+        margin: 0 8px;
+        text-align: center;
+        span {
+          position: absolute;
+          top: 120%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 15px;
+        }
+      }
+    }
+    .shopnow {
+      margin: 20px 0;
+      font-size: 20px;
+      @include btn;
+    }
+  }
+  // guarantee
+  .guarantee {
+    .item {
+      padding: 70px 0 70px 70px;
+      &.item1 {
+        padding: 70px 0;
+        border-right: solid 1px $light-primary-color;
+      }
+      &.item2 {
+        border-right: solid 1px $light-primary-color;
+      }
+      .item-img {
+        display: inline-block;
+        line-height: 0;
+        position: relative;
+        max-width: 100%;
+        vertical-align: middle;
+        img {
+          width: 45px;
+        }
+      }
+      .item-content {
+        margin-left: 10px;
+        max-width: 45%;
+
+        .guarantee-title {
+          font-size: 18px;
+          text-transform: uppercase;
+          word-wrap: break-word;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  // shoes type
+  .shoes-type {
+    padding: 80px 10px 30px;
+    background-color: $light-primary-color;
+    .item {
+      position: relative;
+      &-img {
+        img {
+          max-width: 100%;
+          border-radius: 15px;
+        }
+      }
+      &-title {
+        text-align: center;
+        z-index: 100;
+        position: absolute;
+        top: 7%;
+        left: 47%;
+        transform: translateX(-50%);
+
+        h2 {
+          width: 300px;
+          font-size: 38px;
+          font-family: "Oswald", sans-serif;
+          margin-bottom: 15px;
+          color: #fff;
+        }
+        p {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  // new arrival
+  .new-arrivals {
+    padding: 50px 0;
+    background-color: $light-primary-color;
+  }
+  // sale off
+  .sale-off {
+    padding: 60px 10px;
+    background-color: rgba(0, 156, 248, 1);
+    overflow: hidden;
+    &-content {
+      h2 {
+        font-family: "oswald", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0;
+        color: #ffffff;
+        font-size: 68px;
+        margin-bottom: 30px;
+      }
+      p {
+        color: #fff;
+        font-size: 17px;
+        margin-bottom: 100px;
+      }
+      a {
+        background-color: #fff !important;
+        color: #000 !important;
+        font-size: 20px;
+        &:hover {
+          background-color: $secondary-color !important;
+          color: #fff !important;
+        }
+        @include btn;
+      }
+    }
+    &-img {
+      max-width: 990px;
+      position: relative;
+
+      z-index: 10;
+      img {
+        z-index: 10;
+      }
+      &::before {
+        width: 0;
+        height: 0;
+        border-bottom: 660px solid #1a3852;
+        border-left: 688px solid transparent;
+        content: "";
+        position: absolute;
+        right: -105px;
+        bottom: -60px;
+        z-index: -1;
+      }
+    }
+  }
+  .testimonials {
+    padding: 60px 10px;
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(234, 247, 250, 1) 0%
+    );
+    .feedback {
+      max-width: 500px;
+      .text{
+        font-size: 18px;
+      }
+      .customer {
+        padding: 50px 0;
+        
+        &-icon {
+          width: 70px;
+          height: 70px;
+          img {
+            width: 100%;
+          }
+        }
+        &-name{
+          h3{
+            font-size: 19px;
+            font-weight: 600;
+            margin: 0;
+          }
+          p{
+            font-weight: 400;
+            margin: 0;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .value{
+      padding: 0 60px;
+      margin: 0 auto;
+      &-type{
+        margin-bottom: 20px;
+        max-width: 460px;
+        &-content{
+          h3{
+            font-size: 24px;
+            font-weight: 600;
+          }
+          p{
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/// phần css chung
+.section-title {
+  text-align: center;
+  h1 {
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #000;
+    font-size: 23px;
+    margin-bottom: 5px;
+  }
+  p {
+    line-height: 1;
+    margin-bottom: 15px;
+    @include OswaldText(45px, 700, #000);
+  }
+}

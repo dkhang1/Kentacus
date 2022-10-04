@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.75;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0;
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+///
+.page-heading {
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+  .page-title {
+    position: absolute;
+    top: 50%;
+    left: 68px;
+    width: 100%;
+    z-index: 99;
+    transform: translateY(-50%);
+    h1 {
+      font-size: 40;
+      font-family: "oswald";
+    }
+  }
+}

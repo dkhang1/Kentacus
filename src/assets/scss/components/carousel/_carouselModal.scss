@@ -1,0 +1,12 @@
+.carousel-img {
+  background-color: $light-primary-color;
+  border-radius: 30px;
+  img {
+    display: inline-block;
+    margin: 0 auto;
+    transform: rotateY(-180deg);
+  }
+}
+.ant-carousel .slick-dots {
+  display: none !important;
+}

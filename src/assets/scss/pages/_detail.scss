@@ -1,0 +1,79 @@
+.detail {
+  .product-info {
+    padding: 60px 0;
+    .title {
+      font-size: 29px;
+      font-weight: 600;
+      line-height: normal;
+      margin: -10px 0 0;
+      color: #666666;
+    }
+    .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: $primary-color;
+    }
+    .shortDescription {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .quantity {
+      padding: 50px 0;
+      .quantity-input {
+        height: 54px;
+        padding: 0 10px;
+        width: 100px;
+        outline: none;
+        text-align: center;
+        font-size: 17px;
+      }
+      .addProduct {
+        margin-left: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: $primary-color;
+        color: #fff;
+        height: 54px;
+        padding: 0 35px;
+        transition: all 0.3s ease;
+        border: none;
+        &:hover {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  .product-description {
+    .title {
+      span {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 16px 35px;
+        background-color: #000;
+        color: #fff;
+      }
+    }
+    .content {
+      background-color: $light-primary-color;
+      font-size: 19px;
+      padding: 40px;
+    }
+  }
+  .related-product {
+    background-color: $light-primary-color;
+    margin-top: 80px;
+    padding: 80px 40px 20px;
+    margin-bottom: 70px;
+    .title {
+      h2 {
+        font-family: "oswald";
+        text-align: center;
+        color: #666666;
+        margin: 0 0 50px;
+        font-size: 43px;
+        font-weight: 700;
+      }
+    }
+  }
+}

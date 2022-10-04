@@ -1,0 +1,84 @@
+.header {
+  background-color: rgba(235, 248, 251, 0);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  .container {
+    .header-nav {
+      .nav-item {
+        a {
+          font-size: 17px;
+          padding: 40px 20px;
+          font-weight: 500;
+          color: #5c5c5c;
+          transition: all ease 0.3s;
+          &:hover {
+            color: #47b5ff;
+          }
+        }
+      }
+    }
+    .search-cart {
+      .search-bar {
+        position: relative;
+        margin-right: 20px;
+        &-input {
+          width: 100%;
+          background-color: #ffffff;
+          border: none;
+          color: #000000;
+          padding: 10px 20px;
+          border-radius: 10px;
+          float: left;
+          padding-right: 40px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+            rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+        &-submit {
+          position: absolute;
+          top: -2px;
+          width: 50px;
+          right: -5px;
+          height: 50px;
+          font-size: 0px;
+          border: none;
+          background-image: none;
+          background: url(https://sktperfectdemo.com/themepack/gbshoes/wp-content/themes/gb-shoes/images/search-icon.jpg)
+            no-repeat;
+          background-position: center;
+          cursor: pointer;
+        }
+      }
+      .cart-icon {
+        font-size: 24px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        height: 55px;
+        width: 55px;
+        text-align: center;
+        line-height: 55px;
+        vertical-align: middle;
+        position: relative;
+        margin-left: 4px;
+        transition: all 0.2s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        .cart-total {
+          font-size: 14px;
+          color: #fff;
+          background-color: #47b5ff;
+          height: 25px;
+          width: 25px;
+          display: block;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 25px;
+          position: absolute;
+          top: 15px;
+          right: -15px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

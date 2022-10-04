@@ -1,0 +1,66 @@
+.footer {
+  .container {
+    padding: 35px 25px;
+    background-color: #282828;
+    border-radius: 20px;
+  }
+  &-infobox {
+    padding-bottom: 120px;
+    h3 {
+      margin: 10px 0 20px;
+      @include OswaldText(34px, 700, #fff);
+    }
+    .infobox {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      input {
+        padding: 20px 40px;
+        border-radius: 100px;
+        background: #ffffff;
+        width: 100%;
+        border: 1px solid;
+        border-color: rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+      }
+      button {
+        background-color: #47b5ff;
+        color: #fff;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 14px 40px;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: all 0.3s ease-out;
+        &:hover {
+          background-color: #256d85;
+        }
+      }
+    }
+  }
+  &-brandinfo {
+    h3 {
+      margin: 25px 0;
+      @include OswaldText(25px, 500, #fff);
+    }
+    p {
+      color: #fff !important;
+    }
+    a {
+      color: #fff;
+      transition: all 0.3 ease;
+      &::before {
+        content: "\f105";
+        font-family: FontAwesome;
+        font-size: 14px;
+        padding-right: 10px;
+      }
+      &:hover {
+        color: #47b5ff;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "./base/base";
+@import "./variables/variables";
+
+@import "./components/Layouts/header";
+@import "./components/Layouts/footer";
+@import "./components/carousel/carouselModal";
+@import "./components/card/productCart";
+
+@import "./pages/home";
+@import "./pages/shop";
+@import "./pages/detail";
