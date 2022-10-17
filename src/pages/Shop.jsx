@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import bg from "../assets/img/bg.jpg";
 import ProductCard from "../components/card/ProductCard";
 import { getProductApi } from "../redux/reducer/productReducer";
+import _ from "lodash";
+
 export default function Shop() {
   const { arrProduct } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getProductApi());
   }, []);
@@ -36,9 +37,13 @@ export default function Shop() {
         <div className="container">
           <div className="sort d-flex justify-content-between">
             <p className="result">Showing all {arrProduct.length} results</p>
-            <form action=""></form>
+            <select className="sorting" onChange={(e) => {}}>
+              <option defaultValue="default">Default sorting</option>
+              <option value="lowtohigh">Sort by price: low to high</option>
+              <option value="hightolow">Sort by price: high to low</option>
+            </select>
           </div>
-          <div className="items">
+          <div className="items py-4">
             <div className="row">{renderCardProduct()}</div>
           </div>
         </div>

@@ -1,11 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDetailApi } from "../redux/reducer/productReducer";
+import {
+  addToCart,
+  addToCartDetail,
+  changeQuantity,
+  getDetailApi,
+} from "../redux/reducer/productReducer";
 import bg from "../assets/img/bg.jpg";
 import ProductCard from "../components/card/ProductCard";
 export default function Detail() {
-  const { detailProduct } = useSelector((state) => state.productReducer);
+  const { detailProduct, quantityBuy } = useSelector(
+    (state) => state.productReducer
+  );
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -13,6 +20,10 @@ export default function Detail() {
     let { id } = params;
     dispatch(getDetailApi(id));
   }, [params.id]);
+
+  const handleSubmit = (e) => {
+    e.preventdefault();
+  };
 
   const renderProduct = () => {
     return (
@@ -24,15 +35,25 @@ export default function Detail() {
           <h1 className="title">{detailProduct.name}</h1>
           <p className="price">${detailProduct.price}</p>
           <p className="shortDescription">{detailProduct.description}</p>
-          <form className="quantity d-flex align-items-center">
+          <div className="quantity d-flex align-items-center">
             <input
-              defaultValue={1}
+              defaultValue={quantityBuy}
               className="quantity-input"
               type="number"
               min={1}
+              onChange={(e) => {
+                dispatch(changeQuantity(e));
+              }}
             />
-            <button className="addProduct">Add to cart</button>
-          </form>
+            <button
+              className="addProduct"
+              onClick={() => {
+                dispatch(addToCartDetail(detailProduct));
+              }}
+            >
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
     );

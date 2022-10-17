@@ -1,0 +1,60 @@
+.login-container {
+  form {
+    .row {
+      justify-content: center;
+      margin-bottom: 10px;
+      .form-group {
+        .item {
+          label {
+            font-size: 17px;
+          }
+          input {
+            margin-bottom: 20px;
+            background-color: #eee;
+            &-input.placeholder {
+              font-size: 16px;
+            }
+          }
+        }
+        .item-3 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          a {
+            font-size: 17px;
+            transition: all 0.3s;
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+          button {
+            margin-left: 0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: $primary-color;
+            border: none;
+            color: #fff;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            &:hover {
+              background-color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .loginform{
+    .item-3 {
+      justify-content: space-between !important;
+      a {
+        font-size: 14px !important;
+      }
+      button {
+        font-size: 14px !important;
+      }
+    }
+  }
+}

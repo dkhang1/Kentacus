@@ -23,7 +23,7 @@ const productReducer = createSlice({
     getDetailProduct: (state, action) => {
       state.detailProduct = action.payload;
     },
-    addToCart: (state, action) => {
+    addToCartDetail: (state, action) => {
       let index = state.arrCart.findIndex(
         (pro) => pro.id === action.payload.id
       );
@@ -32,6 +32,17 @@ const productReducer = createSlice({
       } else {
         let quantityBuy = state.quantityBuy;
         state.arrCart.push({ ...action.payload, quantityBuy });
+      }
+      setStoreJson("arrCart", state.arrCart);
+    },
+    addToCart: (state, action) => {
+      let index = state.arrCart.findIndex(
+        (pro) => pro.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.arrCart[index].quantityBuy += 1;
+      } else {
+        state.arrCart.push({ ...action.payload, quantityBuy: 1 });
       }
       setStoreJson("arrCart", state.arrCart);
     },
@@ -72,6 +83,7 @@ export const {
   getAllProduct,
   getDetailProduct,
   addToCart,
+  addToCartDetail,
   changeQuantity,
   changeQuantityCart,
   removeFromCart,

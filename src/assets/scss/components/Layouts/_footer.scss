@@ -64,3 +64,36 @@
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  .footer {
+    &-brandinfo {
+      .row {
+        .col-3 {
+          width: 50% !important;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .footer {
+    &-infobox {
+      form {
+        input {
+          text-align: center;
+        }
+        button {
+          display: block;
+          right: 0 !important;
+          width: 100%;
+          position: relative !important;
+        }
+      }
+    }
+    &-brandinfo {
+      .row {
+        display: block !important;
+      }
+    }
+  }
+}

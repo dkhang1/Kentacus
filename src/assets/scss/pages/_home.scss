@@ -201,12 +201,12 @@
     );
     .feedback {
       max-width: 500px;
-      .text{
+      .text {
         font-size: 18px;
       }
       .customer {
         padding: 50px 0;
-        
+
         &-icon {
           width: 70px;
           height: 70px;
@@ -214,13 +214,13 @@
             width: 100%;
           }
         }
-        &-name{
-          h3{
+        &-name {
+          h3 {
             font-size: 19px;
             font-weight: 600;
             margin: 0;
           }
-          p{
+          p {
             font-weight: 400;
             margin: 0;
             font-size: 17px;
@@ -228,18 +228,18 @@
         }
       }
     }
-    .value{
+    .value {
       padding: 0 60px;
       margin: 0 auto;
-      &-type{
+      &-type {
         margin-bottom: 20px;
         max-width: 460px;
-        &-content{
-          h3{
+        &-content {
+          h3 {
             font-size: 24px;
             font-weight: 600;
           }
-          p{
+          p {
             font-size: 17px;
           }
         }
@@ -263,5 +263,93 @@
     line-height: 1;
     margin-bottom: 15px;
     @include OswaldText(45px, 700, #000);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .carousel {
+    text-align: center;
+    .col-6 {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+  .best-seller {
+    .col-3 {
+      width: 50%;
+    }
+  }
+  .dealofday {
+    text-align: center;
+    .col-6 {
+      width: 100%;
+      .section-title {
+        margin-top: 20px;
+        text-align: center !important;
+      }
+    }
+  }
+  .guarantee {
+    .col-3 {
+      width: 50%;
+      .item.item1 {
+        padding: 70px 0 70px 70px;
+      }
+    }
+  }
+  .new-arrivals {
+    .col-3 {
+      width: 50%;
+    }
+  }
+  .sale-off {
+    text-align: center;
+    .col-6 {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  .testimonials {
+    text-align: center !important;
+    background-image: none !important;
+    background-color: $light-primary-color;
+    .col-6 {
+      width: 100%;
+      .feedback {
+        margin: 0 auto;
+        .customer {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .shoes-type {
+    .col-4 {
+      width: 100%;
+      text-align: center;
+      .item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 567px) {
+  .best-seller {
+    .col-3 {
+      width: 100%;
+    }
+  }
+  .guarantee {
+    .col-3 {
+      width: 100%;
+    }
+  }
+  .new-arrivals {
+    .col-3 {
+      width: 100%;
+    }
   }
 }
