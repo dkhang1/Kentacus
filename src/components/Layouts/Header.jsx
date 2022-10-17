@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo/blackLogo.png";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
@@ -9,10 +9,11 @@ export default function Header() {
   const { userLogin } = useSelector((state) => state.userReducer);
   const { arrCart } = useSelector((state) => state.productReducer);
   const [mobile, setMobile] = useState(false);
+  const [param, setParam] = useState("");
   const totalQuantity = arrCart.reduce((total, item, index) => {
     return (total += item.quantityBuy);
   }, 0);
-
+  const navigate = useNavigate();
   const renderLogin = () => {
     if (userLogin === null) {
       return (
@@ -31,6 +32,14 @@ export default function Header() {
         </NavLink>
       );
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/shop/${param}`);
+  };
+  const handleChange = (e) => {
+    setParam(e.target.value);
   };
 
   return (
@@ -70,11 +79,12 @@ export default function Header() {
           </ul>
         </div>
         <div className="search-cart d-flex align-items-center">
-          <form className="search-bar">
+          <form className="search-bar" onSubmit={handleSubmit}>
             <input
               className="search-bar-input"
               type="text"
               placeholder="Search ..."
+              onChange={handleChange}
             />
             <button type="submit" className="search-bar-submit"></button>
           </form>

@@ -88,7 +88,7 @@ export default function LoginForm(props) {
               <NavLink to="/register">
                 Sign up now?
               </NavLink>
-              <button>Sign in</button>
+              <button className="signin">Sign in</button>
             </div>
           </div>
         </div>

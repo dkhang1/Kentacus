@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { getStoreJson, http, setStoreJson } from "../../util/tools";
 
 const initialState = {
@@ -8,6 +8,7 @@ const initialState = {
   arrCart: [],
   quantityBuy: 1,
   arrProductFavorite: [],
+  arrSearch: [],
 };
 
 const productReducer = createSlice({
@@ -16,6 +17,12 @@ const productReducer = createSlice({
   reducers: {
     getAllProduct: (state, action) => {
       state.arrProduct = action.payload;
+    },
+    getSearchProduct: (state, action) => {
+      state.arrSearch = action.payload;
+    },
+    getArrSearch: (state, action) => {
+      state.arrSearch = action.payload;
     },
     getProductFavorite: (state, action) => {
       state.arrProductFavorite = action.payload;
@@ -89,6 +96,7 @@ export const {
   removeFromCart,
   arrCartReset,
   getProductFavorite,
+  getArrSearch,
 } = productReducer.actions;
 
 export default productReducer.reducer;
@@ -99,6 +107,16 @@ export const getProductApi = () => {
     try {
       const result = await http.get("/product");
       dispatch(getAllProduct(result.data.content));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const getSearchProductApi = (name) => {
+  return async (dispatch) => {
+    try {
+      const result = await http.get(`/product?keyword=${name}`);
+      dispatch(getArrSearch(result.data.content));
     } catch (err) {
       console.log(err);
     }

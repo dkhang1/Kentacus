@@ -177,7 +177,7 @@ export default function RegisterForm(props) {
               <input type="radio" name="gender" value="false" />
               <p className="m-0">Female</p>
             </div>
-            <button>Submit</button>
+            <button className="signup">Submit</button>
           </div>
         </div>
       </form>

@@ -120,7 +120,7 @@ export const updateApi = (updateInfo) => {
       const result = await http.post("/users/updateProfile", updateInfo);
 
       Swal.fire({
-        title: `"Cập nhật " + ${result.data.content}`,
+        title: `Cập nhật ${result.data.content}`,
         icon: "success",
       });
       dispatch(getProfileApi());

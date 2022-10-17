@@ -9,3 +9,22 @@
     font-size: 17px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .shop {
+    .items {
+      .col-3 {
+        width: 50%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 567px) {
+  .shop {
+    .items {
+      .col-3 {
+        width: 100%;
+      }
+    }
+  }
+}

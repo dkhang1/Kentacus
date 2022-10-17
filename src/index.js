@@ -17,6 +17,7 @@ import Detail from "./pages/Detail";
 import Cart from "./pages/Cart";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 
 export const history = createBrowserHistory({ window });
 
@@ -38,6 +39,7 @@ root.render(
           <Route path="detail">
             <Route path=":id" element={<Detail />}></Route>
           </Route>
+          <Route path="profile" element={<Profile />}></Route>
         </Route>
       </Routes>
     </HistoryRouter>

@@ -46,13 +46,13 @@
   }
 }
 @media only screen and (max-width: 576px) {
-  .loginform{
+  .loginform {
     .item-3 {
       justify-content: space-between !important;
       a {
         font-size: 14px !important;
       }
-      button {
+      .singin {
         font-size: 14px !important;
       }
     }

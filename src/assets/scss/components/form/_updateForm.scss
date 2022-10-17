@@ -1,0 +1,42 @@
+.form_container {
+  #updateForm {
+    .row {
+      justify-content: center;
+      .form-group {
+        .form-item {
+          label {
+            font-size: 18px;
+          }
+          input {
+            background-color: #f4f4f4;
+            &-input.placeholder {
+              font-size: 16px;
+            }
+          }
+          p {
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+      }
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #updateForm {
+    max-width: 350px !important;
+    .row {
+      .col-5 {
+        width: 100% !important;
+      }
+    }
+  }
+}

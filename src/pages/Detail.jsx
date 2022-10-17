@@ -9,6 +9,8 @@ import {
 } from "../redux/reducer/productReducer";
 import bg from "../assets/img/bg.jpg";
 import ProductCard from "../components/card/ProductCard";
+import Swal from "sweetalert2";
+import { icons } from "react-icons/lib";
 export default function Detail() {
   const { detailProduct, quantityBuy } = useSelector(
     (state) => state.productReducer
@@ -21,9 +23,7 @@ export default function Detail() {
     dispatch(getDetailApi(id));
   }, [params.id]);
 
-  const handleSubmit = (e) => {
-    e.preventdefault();
-  };
+ 
 
   const renderProduct = () => {
     return (
@@ -48,6 +48,10 @@ export default function Detail() {
             <button
               className="addProduct"
               onClick={() => {
+                Swal.fire({
+                  title: "Thêm vào giỏ hàng thành công",
+                  icon: "success",
+                });
                 dispatch(addToCartDetail(detailProduct));
               }}
             >
