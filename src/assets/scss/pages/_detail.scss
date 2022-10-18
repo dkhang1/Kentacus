@@ -77,3 +77,22 @@
     }
   }
 }
+@media screen and (max-width: 992px) {
+  .detail {
+    .page-title {
+      h1 {
+        width: 200px;
+      }
+    }
+    .product-info {
+      .col-6 {
+        width: 100%;
+      }
+    }
+    .related-product {
+      .col-4 {
+        width: 100%;
+      }
+    }
+  }
+}
