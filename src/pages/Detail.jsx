@@ -18,12 +18,11 @@ export default function Detail() {
   const dispatch = useDispatch();
   const params = useParams();
 
-  useEffect(() => {
+  useEffect(() => { 
+    window.scroll(0, 0);
     let { id } = params;
     dispatch(getDetailApi(id));
   }, [params.id]);
-
- 
 
   const renderProduct = () => {
     return (

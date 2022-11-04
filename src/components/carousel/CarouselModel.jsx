@@ -8,7 +8,7 @@ const CarouselModel = (props) => {
     return arrProduct.arrProduct.map((item, index) => {
       return (
         <div className="carousel-img" key={index}>
-          <img src={item.image} alt="..." />
+          <img className="w-100" src={item.image} alt="..." />
         </div>
       );
     });

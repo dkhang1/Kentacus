@@ -114,7 +114,6 @@
       position: relative;
     }
     .nav-links-mobile {
-      display: none;
       padding: 10px 0 20px 0;
       margin: 0;
       position: absolute;
@@ -125,10 +124,12 @@
       z-index: 10;
       width: 100%;
       transition: all 0.5s ease;
+
       .nav-link {
         width: 100%;
         text-align: center;
         padding: 10px 0;
+
         a {
           color: #000000;
           font-weight: 600;

@@ -17,6 +17,7 @@ export default function Shop() {
   const params = useParams();
   console.log(arrSearch);
   useEffect(() => {
+    window.scroll(0, 0);
     dispatch(getProductApi());
   }, []);
 
@@ -61,7 +62,9 @@ export default function Shop() {
       <div className="products py-5">
         <div className="container">
           <div className="sort d-flex justify-content-between align-items-center">
-            <p className="m-0 result">Showing all {arrProduct.length} results</p>
+            <p className="m-0 result">
+              Showing all {arrProduct.length} results
+            </p>
             <select className="sorting" onChange={(e) => {}}>
               <option defaultValue="default">Default sorting</option>
               <option value="lowtohigh">Sort by price: low to high</option>

@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo/blackLogo.png";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
+import { timeout } from "../../util/tools";
 
 export default function Header() {
   const { userLogin } = useSelector((state) => state.userReducer);
@@ -34,8 +35,9 @@ export default function Header() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    await timeout(1500);
     navigate(`/shop/${param}`);
   };
   const handleChange = (e) => {
