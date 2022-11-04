@@ -349,8 +349,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-6 px-5">
-              <div className="value">
+            <div className="col-6 px-lg-5 px-md-0" >
+              <div className="value px-md-0">
                 <div className="value-type d-flex align-items-center ">
                   <div className="value-type-img">
                     <img
