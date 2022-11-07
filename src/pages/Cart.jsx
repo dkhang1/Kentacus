@@ -7,29 +7,36 @@ import TableCart from "../components/table/TableCart";
 import { useDispatch, useSelector } from "react-redux";
 import { submitOrderApi } from "../redux/reducer/userReducer";
 import { useEffect } from "react";
+import { history } from "../index.js";
+import TableCartMobile from "../components/table/TableCartMobile";
 export default function Cart() {
   const { arrCart } = useSelector((state) => state.productReducer);
   const { userLogin } = useSelector((state) => state.userReducer);
-  const [order, setOrder] = useState({ orderDetail: [], email: "" });
+  const [screen, setScreen] = useState({ width: window.innerWidth });
   const dispatch = useDispatch();
   const orderArr = [];
   for (let orderDetail of arrCart) {
     orderArr.push({
-      orderId: orderDetail.id,
+      productId: orderDetail.id,
       quantity: orderDetail.quantityBuy,
     });
   }
 
-  console.log(order);
-  if (!getStore(ACCESS_TOKEN)) {
-    //Nếu chưa đăng nhập => Chuyển hướng trang
-    Swal.fire({
-      icon: "warning",
-      title: "Please sign in to access",
-    });
+  useEffect(() => {
+    //khi người dùng resize
+    let resizeFunction = () => {
+      //lấy ra kích thước mới của window
+      setScreen({ width: window.innerWidth});
+    };
 
-    return <Navigate to="/login" />;
-  }
+    window.onresize = resizeFunction;
+    return () => {
+      window.removeEventListener("resize", resizeFunction);
+    };
+  }, []);
+
+
+
 
   return (
     <section className="cart">
@@ -43,16 +50,29 @@ export default function Cart() {
       </div>
       <div className="cart-table py-4">
         <div className="container">
-          <TableCart arrProduct={arrCart} />
+          {screen.width >= 754 ? (
+            <TableCart arrProduct={arrCart} />
+          ) : (
+            <TableCartMobile arrProduct={arrCart} />
+          )}
         </div>
       </div>
       <div className="submit-order pb-5 text-end">
         <div className="container">
           <button
             onClick={() => {
-              setOrder({ orderDetail: orderArr, email: userLogin.email });
+              if (!getStore(ACCESS_TOKEN)) {
+                //Nếu chưa đăng nhập => Chuyển hướng trang
+                Swal.fire({
+                  icon: "warning",
+                  title: "Yêu cầu đăng nhập để đặt hàng",
+                });
 
-              dispatch(submitOrderApi(order));
+                history.push("/login");
+              } else {
+                const order = { orderDetail: orderArr, email: userLogin.email };
+                dispatch(submitOrderApi(order));
+              }
             }}
           >
             Submit order

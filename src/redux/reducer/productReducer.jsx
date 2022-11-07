@@ -75,6 +75,11 @@ const productReducer = createSlice({
         }
       }
     },
+    changeQuantityCartMobile: (state, action) => {
+      let { quantity, id } = action.payload;
+      let index = state.arrCart.findIndex((pro) => pro.id === id);
+      state.arrCart[index].quantityBuy = quantity;
+    },
     removeFromCart: (state, action) => {
       state.arrCart = state.arrCart.filter((pro) => pro.id !== action.payload);
       setStoreJson("arrCart", state.arrCart);
@@ -97,6 +102,7 @@ export const {
   arrCartReset,
   getProductFavorite,
   getArrSearch,
+  changeQuantityCartMobile
 } = productReducer.actions;
 
 export default productReducer.reducer;

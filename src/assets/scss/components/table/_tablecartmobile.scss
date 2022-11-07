@@ -1,0 +1,42 @@
+.cart-mobile {
+  .cart-item {
+    padding: 24px 0;
+    box-shadow: rgb(229, 229 ,229) 0px 0px 0px 0px inset,
+      rgb(229 ,229 ,229) 0px 0px 0px 0px inset,
+      rgb(229,229 ,229) 0px -1px 0px 0px inset,
+      rgb(229, 229,229) 0px 0px 0px 0px inset;
+    &-img {
+      padding-right: 16px;
+      img {
+        width: 100%;
+      }
+    }
+    &-info {
+      .info {
+        .name {
+          a {
+            color: #111;
+            font-weight: 500;
+          }
+        }
+
+        .quantity {
+          padding: 10px 0;
+          label {
+            margin-right: 5px;
+          }
+        }
+      }
+      .price {
+        color: #111;
+        font-weight: 500;
+      }
+      .action {
+        i {
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

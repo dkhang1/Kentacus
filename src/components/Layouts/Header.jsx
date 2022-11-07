@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo/blackLogo.png";
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
 import { timeout } from "../../util/tools";
+import { signout } from "../../redux/reducer/userReducer";
+import { history } from "../../index.js";
 
 export default function Header() {
   const { userLogin } = useSelector((state) => state.userReducer);
   const { arrCart } = useSelector((state) => state.productReducer);
   const [mobile, setMobile] = useState(false);
   const [param, setParam] = useState("");
+  const dispatch = useDispatch();
   const totalQuantity = arrCart.reduce((total, item, index) => {
     return (total += item.quantityBuy);
   }, 0);
@@ -48,7 +51,9 @@ export default function Header() {
     <header className="header">
       <div className="container d-flex justify-content-between align-items-center">
         <div className="logo">
-          <img className="img-fluid" src={logo} alt="logo" width={150} />
+          <NavLink to="/home">
+            <img className="img-fluid" src={logo} alt="logo" width={150} />
+          </NavLink>
         </div>
         <div className="header-nav">
           <ul className="nav justify-content-center">
@@ -183,6 +188,18 @@ export default function Header() {
             <>
               <li className="nav-link profile">
                 <NavLink to="/profile">Hi! {userLogin.name}</NavLink>
+              </li>
+              <li className="nav-link profile">
+                <button
+                  className="btn btn-logout"
+                  onClick={() => {
+                    setMobile(!mobile);
+                    dispatch(signout());
+                    history.push("/home");
+                  }}
+                >
+                  Sign out
+                </button>
               </li>
             </>
           )}

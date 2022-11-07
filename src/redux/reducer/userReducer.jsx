@@ -25,10 +25,15 @@ const userReducer = createSlice({
     getProfileAction: (state, action) => {
       state.userLogin = action.payload;
     },
+    signout: (state, action) => {
+      state.userLogin = null;
+      localStorage.clear(ACCESS_TOKEN);
+      localStorage.clear(USER_LOGIN);
+    },
   },
 });
 
-export const { getProfileAction } = userReducer.actions;
+export const { getProfileAction, signout } = userReducer.actions;
 
 export const { updateAction } = userReducer.actions;
 
@@ -136,7 +141,7 @@ export const submitOrderApi = (order) => {
     try {
       const result = await http.post("/Users/order", order);
       Swal.fire({
-        title: result.data.content,
+        title: "Order thành công",
         icon: "success",
       });
       dispatch(arrCartReset());

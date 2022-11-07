@@ -24,10 +24,10 @@ export default function Shop() {
   useEffect(() => {
     const { name } = params;
     dispatch(getSearchProductApi(name));
-    console.log(arrSearch);
-    console.log(name);
   }, [params.name]);
 
+  console.log(arrSearch);
+  console.log(arrProduct);
   const renderCardProduct = () => {
     if (params.name === undefined) {
       return arrProduct.map((item, index) => {
@@ -63,7 +63,9 @@ export default function Shop() {
         <div className="container">
           <div className="sort d-flex justify-content-between align-items-center">
             <p className="m-0 result">
-              Showing all {arrProduct.length} results
+              {arrSearch.length === 0
+                ? `Showing all ${arrProduct.length} results`
+                : `Showing all ${arrSearch.length} results`}
             </p>
             <select className="sorting" onChange={(e) => {}}>
               <option defaultValue="default">Default sorting</option>
