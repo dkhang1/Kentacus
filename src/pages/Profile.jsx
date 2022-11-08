@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import bg from "../assets/img/bg.jpg";
 import UpdateForm from "../components/form/UpdateForm";
+import TableCartMobile from "../components/table/TableCartMobile";
 import TableProfile from "../components/table/TableProfile";
+import TableProfileMobile from "../components/table/TableProfileMobile";
 import { getFavoriteProductApi } from "../redux/reducer/productReducer";
 import { getProfileApi } from "../redux/reducer/userReducer";
 export default function Profile() {
   const { userLogin } = useSelector((state) => state.userReducer);
   const { arrProductFavorite } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
+  const [screen, setScreen] = useState({ width: window.innerWidth });
 
   useEffect(() => {
     dispatch(getFavoriteProductApi());
     dispatch(getProfileApi());
+    //khi người dùng resize
+    let resizeFunction = () => {
+      //lấy ra kích thước mới của window
+      setScreen({ width: window.innerWidth });
+    };
+
+    window.onresize = resizeFunction;
+    return () => {
+      window.removeEventListener("resize", resizeFunction);
+    };
   }, []);
 
   const renderTable = () => {
@@ -42,7 +55,11 @@ export default function Profile() {
               Order at: {orderItem.date}
             </p>
           </div>
-          <TableProfile arrProduct={orderItem.orderDetail} id={orderItem.id} />
+          {screen.width >= 754 ? (
+            <TableProfile arrProduct={orderItem.orderDetail} />
+          ) : (
+            <TableProfileMobile arrProduct={orderItem.orderDetail} />
+          )}
         </div>
       );
     });
@@ -111,7 +128,11 @@ export default function Profile() {
                 role="tabpanel"
                 tabIndex={0}
               >
-                <TableProfile arrProduct={arrProductFavorite} />
+                {screen.width >= 754 ? (
+                  <TableProfile arrProduct={arrProductFavorite} />
+                ) : (
+                  <TableProfileMobile arrProduct={arrProductFavorite} />
+                )}
               </div>
             </div>
           </div>

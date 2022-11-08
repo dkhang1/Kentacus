@@ -42,7 +42,7 @@ export default function Header() {
     e.preventDefault();
     await timeout(1500);
     navigate(`/shop/${param}`);
-  };
+  };  
   const handleChange = (e) => {
     setParam(e.target.value);
   };
