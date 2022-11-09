@@ -3,7 +3,7 @@ import { Table } from "antd";
 import React, { useState } from "react";
 
 const TableProfile = (props) => {
-  const { arrProduct, id } = props;
+  const { arrProduct } = props;
 
   const columns = [
     {

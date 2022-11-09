@@ -128,11 +128,7 @@ export default function Profile() {
                 role="tabpanel"
                 tabIndex={0}
               >
-                {screen.width >= 754 ? (
-                  <TableProfile arrProduct={arrProductFavorite} />
-                ) : (
-                  <TableProfileMobile arrProduct={arrProductFavorite} />
-                )}
+                This feature will have in future !!!
               </div>
             </div>
           </div>

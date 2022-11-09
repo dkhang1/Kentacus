@@ -42,7 +42,7 @@ export default function Header() {
     e.preventDefault();
     await timeout(1500);
     navigate(`/shop/${param}`);
-  };  
+  };
   const handleChange = (e) => {
     setParam(e.target.value);
   };
@@ -187,7 +187,14 @@ export default function Header() {
           ) : (
             <>
               <li className="nav-link profile">
-                <NavLink to="/profile">Hi! {userLogin.name}</NavLink>
+                <NavLink
+                  to="/profile"
+                  onClick={() => {
+                    setMobile(!mobile);
+                  }}
+                >
+                  Hi! {userLogin.name}
+                </NavLink>
               </li>
               <li className="nav-link profile">
                 <button

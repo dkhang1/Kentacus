@@ -10,8 +10,7 @@ import {
 
 export default function TableProfileMobile(props) {
   const { arrProduct } = props;
-  const dispatch = useDispatch();
-
+  console.log(arrProduct);
   const renderItem = () => {
     return arrProduct.map((product, index) => {
       return (
@@ -30,9 +29,7 @@ export default function TableProfileMobile(props) {
                   <Button>{product.quantity} </Button>
                 </div>
               </div>
-              <div className="price">
-                {product.price}$
-              </div>
+              <div className="price">{product.price}$</div>
             </div>
           </div>
         </div>

@@ -26,8 +26,7 @@ export default function Shop() {
     dispatch(getSearchProductApi(name));
   }, [params.name]);
 
-  console.log(arrSearch);
-  console.log(arrProduct);
+
   const renderCardProduct = () => {
     if (params.name === undefined) {
       return arrProduct.map((item, index) => {

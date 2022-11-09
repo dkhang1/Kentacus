@@ -29,6 +29,10 @@ const userReducer = createSlice({
       state.userLogin = null;
       localStorage.clear(ACCESS_TOKEN);
       localStorage.clear(USER_LOGIN);
+      Swal.fire({
+        icon:"success",
+        title: "Đăng xuất thành công"
+      })
     },
   },
 });
